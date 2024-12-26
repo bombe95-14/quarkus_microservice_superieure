@@ -12,6 +12,6 @@ public class InscriptionRepository implements PanacheRepository<Inscription>  {
     
   public List<Inscription> findByEleve(Eleve eleve){
         return list("eleve", eleve);
-    }
+}
 
 }
