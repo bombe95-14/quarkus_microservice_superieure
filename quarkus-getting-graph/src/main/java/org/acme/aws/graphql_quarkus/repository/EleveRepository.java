@@ -23,6 +23,11 @@ public class EleveRepository implements PanacheRepository<Eleve> {
 //     public void deleteStefs(){
 //         delete("name", "Stef");
 //    }
+
+
+//Stream<Person> persons = personRepository.streamAll();
+// List<Person> persons = Person.list(Sort.by("name").and("birth"));
+
 //  List<Person> livingPersons = personRepository.list("status", Status.Alive);
 //  personRepository.update("name = 'Mortal' where status = ?1", Status.Alive);
 
