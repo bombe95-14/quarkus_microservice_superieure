@@ -24,8 +24,8 @@ public class GreetingResource {
      @POST
     @Transactional
     public Response create(Eleve eleve) {
-        eleve.persist();
-        return Response.created(URI.create("/persons/" + eleve.id )).build();
+        //eleve.persist();
+        return Response.created(URI.create("/persons/" + eleve )).build();
     }
 }
   

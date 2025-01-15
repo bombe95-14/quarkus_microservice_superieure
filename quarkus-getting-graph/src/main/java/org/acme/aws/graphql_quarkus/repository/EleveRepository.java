@@ -19,6 +19,12 @@ public class EleveRepository implements PanacheRepository<Eleve> {
     public List<Eleve> findByMatricule(String matricule){
         return list("matricule", matricule);
     }
+
+    public List<Eleve> listOrdonneStudent(){
+
+        return list("order by nom, prenom");
+        
+    }
  
 //     public void deleteStefs(){
 //         delete("name", "Stef");

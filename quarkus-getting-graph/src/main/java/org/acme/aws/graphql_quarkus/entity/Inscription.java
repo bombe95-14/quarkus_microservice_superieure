@@ -1,14 +1,17 @@
 package org.acme.aws.graphql_quarkus.entity;
 
-import io.quarkus.hibernate.orm.panache.PanacheEntityBase;
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.Id;
 
 @Entity
-public class Inscription extends PanacheEntityBase {
+public class Inscription{  // extends PanacheEntityBase 
     
-    private Eleve eleve;
+     @Id @GeneratedValue 
+    private Long id;
+    /* private Eleve eleve;
     private Classroom classroom;
-    private SchoolYear schoolYear;
+    private SchoolYear schoolYear; */
 
     
 
