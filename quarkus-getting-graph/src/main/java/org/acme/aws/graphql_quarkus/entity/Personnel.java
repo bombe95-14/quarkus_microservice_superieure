@@ -14,23 +14,23 @@ import org.acme.aws.graphql_quarkus.enumeration.Sexe;
 @Entity
 public class Personnel extends PanacheEntityBase {
     
- @Id @GeneratedValue 
-    private Long id;
-    
-    private String nom;
-    private String prenom;
+ @Id @GeneratedValue
+ public Long id;
+
+   public String nom;
+   public String prenom;
 
     @Column( unique = true )
-    private String matricule;
+    public String matricule;
 
     @Column( unique = true )
-    private String numeroCni;
+    public String numeroCni;
 
-    private Date dateDelivrance;
+   public Date dateDelivrance;
 
-    private Date birthday;
-    private Sexe sexe;
-    private String LieuNaissance;
+   public Date birthday;
+   public Sexe sexe;
+   public String LieuNaissance;
 
 
 }
