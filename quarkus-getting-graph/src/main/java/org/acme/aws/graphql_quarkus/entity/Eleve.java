@@ -12,7 +12,7 @@ import org.acme.aws.graphql_quarkus.enumeration.StatusEleve;
 
 
 @Entity
-public class Eleve    { //
+public class Eleve  extends PanacheEntityBase { //
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

@@ -6,6 +6,8 @@ import org.acme.aws.graphql_quarkus.entity.Eleve;
 import org.acme.aws.graphql_quarkus.traitement.EleveTraitement;
 import org.eclipse.microprofile.graphql.*;
 
+import java.util.List;
+
 
 @GraphQLApi
 public class HelloGraphQLResource {
@@ -20,14 +22,20 @@ public class HelloGraphQLResource {
     }
 
     @Query
-    public long globalListStudent() {
+    @Description("Say hello")
+    public String listStudent(@DefaultValue("World") String name) {
+        return "Hello " + name;
+    }
+
+    @Query
+    public List<Eleve> globalListStudent() {
         
-        return eleveTraitement.count();
+        return eleveTraitement.getListEleve();
     }
 
     @Mutation
     @Transactional
-    public Eleve createHero( @Source Eleve eleve ) {
+    public Eleve createHero( Eleve eleve ) {
         Eleve eleveToSave =  eleveTraitement.createStudent( eleve );
         return eleveToSave;
     }

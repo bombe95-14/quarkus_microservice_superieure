@@ -1,5 +1,6 @@
 package org.acme.aws.graphql_quarkus.traitement;
 
+import io.smallrye.mutiny.Multi;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import java.util.List;
@@ -16,7 +17,6 @@ public class EleveTraitement {
 EleveRepository eleveRepository;
 
 public long count(){
-    
     return eleveRepository.count();
 }
 
@@ -29,11 +29,12 @@ public List<Eleve> crearionStudent(){
         
 } 
 
-public Eleve createStudent( Eleve eleve ){
-
-    System.out.println(  "csss nsjg sdsds sdsd  \n " +  eleve.toString() );
-    eleveRepository.persist(eleve);
-    return eleve;
+public  List<Eleve>  getListEleve() {
+    return eleveRepository.findAll().list();
 }
 
+public Eleve createStudent(Eleve eleve){
+  eleveRepository.persist(eleve);
+    return eleve;
+}
 }
