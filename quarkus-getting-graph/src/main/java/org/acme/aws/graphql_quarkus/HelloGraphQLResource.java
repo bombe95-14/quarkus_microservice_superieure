@@ -27,19 +27,6 @@ public class HelloGraphQLResource {
         return "Hello " + name;
     }
 
-    @Query
-    public List<Eleve> globalListStudent() {
-        
-        return eleveTraitement.getListEleve();
-    }
-
-    @Mutation
-    @Transactional
-    public Eleve createHero( Eleve eleve ) {
-        Eleve eleveToSave =  eleveTraitement.createStudent( eleve );
-        return eleveToSave;
-    }
-
   /*   @Mutation
     public Eleve deleteHero(int id) {
         return null;

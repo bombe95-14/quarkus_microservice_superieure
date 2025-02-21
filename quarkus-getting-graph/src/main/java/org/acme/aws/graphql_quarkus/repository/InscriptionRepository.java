@@ -3,6 +3,8 @@ package org.acme.aws.graphql_quarkus.repository;
 import io.quarkus.hibernate.orm.panache.PanacheRepository;
 import io.quarkus.panache.common.Parameters;
 import java.util.List;
+
+import jakarta.enterprise.context.ApplicationScoped;
 import org.acme.aws.graphql_quarkus.entity.Eleve;
 import org.acme.aws.graphql_quarkus.entity.Inscription;
 import org.acme.aws.graphql_quarkus.entity.SchoolYear;
@@ -11,7 +13,7 @@ import org.acme.aws.graphql_quarkus.entity.SchoolYear;
 
 
 
-
+@ApplicationScoped
 public class InscriptionRepository implements PanacheRepository<Inscription>  {
     
 //public List<Inscription> findByEleve(Eleve eleve){

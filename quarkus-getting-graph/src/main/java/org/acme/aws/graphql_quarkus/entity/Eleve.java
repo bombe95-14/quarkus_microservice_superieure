@@ -30,6 +30,7 @@ public class Eleve  extends PanacheEntityBase { //
     public Date birthday;
     public Sexe sexe;
     public String LieuNaissance;
+    public String password;
     public StatusEleve statusEleve;
 
     @OneToMany(mappedBy = "eleve", cascade = CascadeType.ALL, orphanRemoval = true)
@@ -119,11 +120,5 @@ public class Eleve  extends PanacheEntityBase { //
         this.inscriptions = inscriptions;
     }
 
-    public void crearionStudent(){
-
-        this.prenom = "jhkkjsdf f";
-        this.sexe = Sexe.FEMININ;
-        
-    } 
     
 }

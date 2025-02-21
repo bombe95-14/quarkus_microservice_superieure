@@ -2,6 +2,9 @@ package org.acme.aws.graphql_quarkus.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+
+import java.util.Date;
+
 import org.acme.aws.graphql_quarkus.enumeration.Semestre;
 
 @Entity
@@ -21,6 +24,11 @@ public class Inscription{  // extends PanacheEntityBase
     @JsonIgnore
     public SchoolYear schoolYear;
 
+    @ManyToOne(targetEntity = Classe.class, fetch = FetchType.LAZY)
+    @JoinColumn(name = "classe_id")
+    @JsonIgnore
+    public Classe classe;
+    public Date dateInscription;
     public Semestre semestre;
 
 
@@ -48,5 +56,13 @@ public class Inscription{  // extends PanacheEntityBase
 
     public void setEleve(Eleve eleve) {
         this.eleve = eleve;
+    }
+
+
+    public Date getDateInscription() {
+        return dateInscription;
+    }
+    public void setDateInscription(Date dateInscription) {
+        this.dateInscription = dateInscription;
     }
 }

@@ -81,3 +81,33 @@ Easily start your Reactive RESTful Web Services
 Start coding with this Hello GraphQL Query
 
 [Related guide section...](https://quarkus.io/guides/smallrye-graphql)
+
+
+
+mutation{
+  createStudent(eleveInput : {nom : "kenfack", prenom : "cedric",
+  	numeroCni : "jkdhkdsj sj lksdj slk", sexe: "Masculin" } ){
+    nom
+  }
+}
+
+
+mutation{
+  createStudent(eleveInput : {nom : "Nguefack", prenom : "cedric fabrice",
+  	numeroCni : "jkdhkdsj sj lksdj slk", sexe: "Masculin", birthday: "1996-03-15" } ){
+    nom
+  }
+}
+
+
+mutation{
+ createRegistrationStudent( inscriptionInput : {
+  	idEleve: 2,
+  	idClasse: 11,
+  idSchoolYear:1, 
+  dateInscription: "2016-07-20T17:30:15+05:30"
+} ){
+  	id
+  	dateInscription
+}
+}
