@@ -18,7 +18,7 @@ public class EleveRessourceTest {
     @Test
     public void testGlobalListStudent() {
         given()
-          .when().get("/graphql?query={globalListStudent{birthday}}")
+          .when().get("/graphql?query={globalListStudent{}}")
           .then()
              .statusCode(200)
              .body("data.globalListStudent", hasSize(0)); // Adjust the expected size based on your data
@@ -32,6 +32,9 @@ public class EleveRessourceTest {
         EleveInput eleveInput = new EleveInput();
         eleveInput.setNom("John Doe");
         eleveInput.setBirthday(new Date());
+        //eleveInput.setAge(20);
+
+
 
 
         given()

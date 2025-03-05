@@ -5,6 +5,8 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.BadRequestException;
 import jakarta.ws.rs.core.Response;
+import un.my.ext.runtime.ExtProcessor;
+import un.my.ext.runtime.dto.bodyrequest.AuthenticationStudent;
 
 import java.util.List;
 import java.util.Objects;
@@ -24,9 +26,13 @@ public class EleveTraitement {
 EleveRepository eleveRepository;
 
 @Inject
+ExtProcessor extProcessors;
+
+@Inject
 InscriptionRepository inscriptionRepository;
 
     public long count(){
+        extProcessors.processor();
         return eleveRepository.count();
     }
 
@@ -70,6 +76,10 @@ InscriptionRepository inscriptionRepository;
     }
 
     public Eleve informationsStudent( Long idEleve ){
+        return new Eleve();
+    }
+
+    public Eleve loginStudent( AuthenticationStudent authenticationStudent ){
         return new Eleve();
     }
 }
