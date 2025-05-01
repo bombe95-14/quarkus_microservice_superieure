@@ -8,7 +8,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class DiplomeEleve {
+public class DiplomeEleve extends PanacheEntityBase  {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
