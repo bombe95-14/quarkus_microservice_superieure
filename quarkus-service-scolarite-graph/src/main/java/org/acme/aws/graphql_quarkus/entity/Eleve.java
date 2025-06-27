@@ -36,6 +36,9 @@ public class Eleve  extends PanacheEntityBase { //
     @OneToMany(mappedBy = "eleve", cascade = CascadeType.ALL, orphanRemoval = true)
     public Set<Inscription> inscriptions = new HashSet<>();
 
+    @OneToMany(mappedBy = "eleve", cascade = CascadeType.ALL, orphanRemoval = true)
+    public Set<DiplomeEleve> diplomeEleves = new HashSet<>();
+
     public Eleve(){
 
     }
