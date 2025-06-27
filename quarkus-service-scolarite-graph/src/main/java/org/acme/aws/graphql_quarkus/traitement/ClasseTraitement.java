@@ -9,7 +9,6 @@ import org.acme.aws.graphql_quarkus.repository.ClasseRepository;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
-import un.my.ext.runtime.dto.bodyrequest.AuthenticationStaff;
 
 @ApplicationScoped
 public class ClasseTraitement {
@@ -48,7 +47,7 @@ public class ClasseTraitement {
         classe.setMontantGarderie(createClase.montantGarderie);
         classe.setMontantEtudeDirige(createClase.montantEtudeDirige);    */
 
-        AuthenticationStaff authenticationStaff = new AuthenticationStaff();
+       // AuthenticationStaff authenticationStaff = new AuthenticationStaff();
         classeRepository.persist(classe);
         return classe;
         

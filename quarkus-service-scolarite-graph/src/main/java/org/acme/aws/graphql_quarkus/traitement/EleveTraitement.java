@@ -5,18 +5,18 @@ import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.BadRequestException;
 import jakarta.ws.rs.core.Response;
-import un.my.ext.runtime.ExtProcessor;
-import un.my.ext.runtime.dto.bodyrequest.AuthenticationStudent;
+//import un.my.ext.runtime.ExtProcessor;
+//import un.my.ext.runtime.dto.bodyrequest.AuthenticationStudent;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.Optional;
 
 import org.acme.aws.graphql_quarkus.body_request_and_body_response.EleveInput;
 import org.acme.aws.graphql_quarkus.entity.Eleve;
 import org.acme.aws.graphql_quarkus.enumeration.Sexe;
 import org.acme.aws.graphql_quarkus.repository.EleveRepository;
 import org.acme.aws.graphql_quarkus.repository.InscriptionRepository;
-import org.jboss.resteasy.reactive.RestResponse.StatusCode;
 
 
 @ApplicationScoped
@@ -26,13 +26,10 @@ public class EleveTraitement {
 EleveRepository eleveRepository;
 
 @Inject
-ExtProcessor extProcessors;
-
-@Inject
 InscriptionRepository inscriptionRepository;
 
     public long count(){
-        extProcessors.processor();
+      //  extProcessors.processor();
         return eleveRepository.count();
     }
 
@@ -79,7 +76,13 @@ InscriptionRepository inscriptionRepository;
         return new Eleve();
     }
 
-    public Eleve loginStudent( AuthenticationStudent authenticationStudent ){
-        return new Eleve();
-    }
+    // public Eleve loginStudent( AuthenticationStudent authenticationStudent ){
+    //     Optional<Eleve>  optionalEleve = eleveRepository.findByMatricule( authenticationStudent.getMatriculeStudent() );
+    //     if ( optionalEleve.isPresent() ) {
+            
+    //     } else {
+            
+    //     }
+    //     return new Eleve();
+    // }
 }

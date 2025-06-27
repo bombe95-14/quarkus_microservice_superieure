@@ -2,7 +2,7 @@ package org.acme.aws.graphql_quarkus.resource;
 
 import jakarta.inject.Inject;
 import jakarta.transaction.Transactional;
-import un.my.ext.runtime.dto.bodyrequest.AuthenticationStudent;
+//import un.my.ext.runtime.dto.bodyrequest.AuthenticationStudent;
 
 import org.acme.aws.graphql_quarkus.body_request_and_body_response.EleveInput;
 import org.acme.aws.graphql_quarkus.dto.response_request.EleveResponseDto;
@@ -38,12 +38,12 @@ public class EleveResource {
         return new EleveResponseDto( eleveToSave );
     }
 
-    @Mutation
-    @Transactional
-    public EleveResponseDto loginStudent( AuthenticationStudent authenticationStudent ) {
-        Eleve eleveToSave =  eleveTraitement.loginStudent( authenticationStudent );
+    // @Mutation
+    // @Transactional
+    // public EleveResponseDto loginStudent( AuthenticationStudent authenticationStudent ) {
+    //     Eleve eleveToSave =  eleveTraitement.loginStudent( authenticationStudent );
 
-        return new EleveResponseDto( eleveToSave );
-    }
+    //     return new EleveResponseDto( eleveToSave );
+    // }
 
 }

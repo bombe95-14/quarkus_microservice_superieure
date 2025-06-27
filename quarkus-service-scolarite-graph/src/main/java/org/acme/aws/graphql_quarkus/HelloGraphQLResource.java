@@ -12,9 +12,6 @@ import java.util.List;
 @GraphQLApi
 public class HelloGraphQLResource {
 
-    @Inject
-    EleveTraitement eleveTraitement;
-
     @Query
     @Description("Say hello")
     public String sayHello(@DefaultValue("World") String name) {

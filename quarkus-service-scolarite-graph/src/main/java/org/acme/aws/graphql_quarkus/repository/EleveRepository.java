@@ -16,7 +16,6 @@ import org.acme.aws.graphql_quarkus.entity.Eleve;
 
 
 @ApplicationScoped
-
 @NamedQueries(value = {@NamedQuery(name = "EleveRepository.count",
         query = "SELECT count() FROM Eleve e where e.matricule like '?1%'  ")
 }
