@@ -6,7 +6,7 @@ import jakarta.enterprise.context.ApplicationScoped;
 public class ExtProcessor {
     
     public void processor(){
-        System.out.println("ExtProcessor.processor()");
+        
     }
 
 }
