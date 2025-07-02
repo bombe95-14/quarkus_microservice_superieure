@@ -15,6 +15,21 @@ public class ClasseResource {
         return "List of classes";
     }
 
+    @Path("/add")
+    @POST
+    public Personnel addClass(Personnel personnel) {
+        // Here you would typically add the class to a database or perform some action
+        return personnel;
+    }
+
+    @Path("/classe/{classroomId}")
+    @POST
+    public Long removeClass(Long classroomId) {
+    
+        // Here you would typically remove the class from a database or perform some action
+        return classroomId;
+    }
+
     
 
 }

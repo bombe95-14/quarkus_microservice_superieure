@@ -8,8 +8,10 @@ import java.util.Date;
 @Entity
 public class SchoolYear { // extends PanacheEntityBase
     
-     @Id @GeneratedValue
-     public Long id;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    public Long id;
+    
     public Long getId() {
         return id;
     }

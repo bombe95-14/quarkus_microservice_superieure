@@ -1,6 +1,13 @@
 package org.acme.aws.reactive_quarkus.simple.entity;
 
 
+import java.text.Format;
+import java.util.Set;
+
+import org.acme.aws.reactive_quarkus.simple.enums.FormationType;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import jakarta.persistence.*;
 
 
@@ -13,8 +20,16 @@ public class Classe {
     public String nomClasse;
     public String department;
     public String description;
+
+    @Column( unique=true )
     public String codeClasse;
 
+    @Enumerated(EnumType.STRING)
+    private FormationType formationType;
+
+    @OneToMany(mappedBy = "classe", cascade = CascadeType.ALL, orphanRemoval = true)
+    @JsonIgnore
+    private Set<AssignmentTeachersClassroom> assignmentTeachersClassrooms = new java.util.HashSet<>();
 
 
     public String getCodeClasse() {

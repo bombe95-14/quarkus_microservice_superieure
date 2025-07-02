@@ -17,6 +17,8 @@ services:
       - gateway
 
   notes_mongodb:
+    restart: always
+
     image: mongo:4.4
     container_name: mongodb
     ports:

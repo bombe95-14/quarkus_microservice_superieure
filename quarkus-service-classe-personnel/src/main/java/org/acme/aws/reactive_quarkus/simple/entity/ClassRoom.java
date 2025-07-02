@@ -15,7 +15,7 @@ public class ClassRoom {
     @Id
     @GeneratedValue(generator = "UUID")
     @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
-    @Column(name = "id", updatable = false, nullable = false)
+    @Column(name = "class_room_uuid", updatable = false, nullable = false)
     public UUID id;
 
     public String name;
