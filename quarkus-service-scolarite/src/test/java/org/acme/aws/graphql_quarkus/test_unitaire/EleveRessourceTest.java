@@ -2,19 +2,33 @@ package org.acme.aws.graphql_quarkus.test_unitaire;
 
 
 import io.quarkus.test.junit.QuarkusTest;
+import io.smallrye.graphql.client.GraphQLClient;
+import io.smallrye.graphql.client.Response;
+import io.smallrye.graphql.client.dynamic.api.DynamicGraphQLClient;
+import jakarta.inject.Inject;
+import jakarta.json.JsonObject;
+import jakarta.json.JsonValue;
 
+import org.acme.aws.graphql_quarkus.dto.request.EleveInput;
 import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.Matchers.hasSize;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Date;
+import java.util.Map;
+import java.util.concurrent.ExecutionException;
 
 
 
 @QuarkusTest
 public class EleveRessourceTest {
 
+   @Inject
+    @GraphQLClient("user-client")
+    DynamicGraphQLClient client;
+    
   // @Test
   // public void testGlobalListStudent() {
 
@@ -27,21 +41,29 @@ public class EleveRessourceTest {
   //      .body("data.globalListStudent", hasSize(0)); // Adjust the expected size based on your data
   // }
 
-  // @Test
-  // public void testCreateStudent() {
-  //   EleveInput eleveInput = new EleveInput();
-  //   eleveInput.setNom("John Doe");
-  //   eleveInput.setBirthday(new Date());
+  @Test
+  public void testCreateStudent() {
+    EleveInput eleveInput = new EleveInput();
+    eleveInput.setNom("John Doe");
+    eleveInput.setBirthday(new Date());
+    eleveInput.setPrenom("John");
+    eleveInput.setSexe("Masculin"); // Assuming codeClasse is a field in EleveInput
+    eleveInput.setMatricule("mskjksdjlkvsd");
+    eleveInput.setNumeroCni("jdkjklsdsssdfefe");
+    // eleveInput.setEmail("
 
-  //   given()
-  //     .contentType("application/json")
-  //     .body(eleveInput)
-  //     .when().post("/graphql?mutation={createStudent(eleveInput:{name:\"John Doe\", age:20}){name, age}}")
-  //     .then()
-  //      .statusCode(200)
-  //      .body("data.createStudent.name", is("John Doe"))
-  //      .body("data.createStudent.age", is(20));
-  // }
+
+    given()
+      .contentType("application/json")
+      .body("{ \"mutation\" : \"{createStudent(eleveInput:{nom:\"John Doe\", matricule:\"20\", numeroCni: \"123456\"}){nom, matricule, numeroCni}} \"}")
+
+      .when().post("/graphql")
+      //.post("/graphql?mutation={createStudent(eleveInput:{nom:\"John Doe\", matricule:\"20\", numeroCni: \"123456\"}){nom, matricule, numeroCni}}")
+      .then()
+       .statusCode(200);
+    //   .body("data.createStudent.matricule", equals("20"))
+    //   .body("data.createStudent.numeroCni", equals("123456"));
+  }
 
   // @Test
   // public void testCreateStudentWithMissingName() {
