@@ -41,6 +41,8 @@ public class EleveResource {
 //     surname
 //   }
 // }
+//      public Film getFilm(Context context, int filmId) {
+
 
 
     @Inject
