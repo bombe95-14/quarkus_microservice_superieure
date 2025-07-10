@@ -1,0 +1,8 @@
+spring:
+  application:
+    name: auth_spring
+
+sever:
+  port: 8090
+  servlet:
+    context-path: /auth
