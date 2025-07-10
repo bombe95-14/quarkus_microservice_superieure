@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: authentication_service
+
+server:
+  port: 8090

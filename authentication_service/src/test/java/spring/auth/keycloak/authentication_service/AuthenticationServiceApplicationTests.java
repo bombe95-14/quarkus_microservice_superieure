@@ -1,10 +1,10 @@
-package auth.service.spring.auth_spring;
+package spring.auth.keycloak.authentication_service;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class AuthSpringApplicationTests {
+class AuthenticationServiceApplicationTests {
 
 	@Test
 	void contextLoads() {
