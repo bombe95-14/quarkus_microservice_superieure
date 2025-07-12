@@ -2,9 +2,6 @@ package org.acme.aws.graphql_quarkus.test_unitaire;
 
 
 import io.quarkus.test.junit.QuarkusTest;
-import io.smallrye.graphql.client.GraphQLClient;
-import io.smallrye.graphql.client.Response;
-import io.smallrye.graphql.client.dynamic.api.DynamicGraphQLClient;
 import jakarta.inject.Inject;
 import jakarta.json.JsonObject;
 import jakarta.json.JsonValue;
