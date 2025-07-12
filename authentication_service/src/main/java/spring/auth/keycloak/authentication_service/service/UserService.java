@@ -1,5 +1,10 @@
 package spring.auth.keycloak.authentication_service.service;
 
+import java.util.List;
+
+import org.keycloak.admin.client.resource.UserResource;
+import org.keycloak.representations.idm.RoleRepresentation;
+
 import spring.auth.keycloak.authentication_service.dto.request.CreatePersonnelRequestDto;
 import spring.auth.keycloak.authentication_service.dto.request.CreateStudentRequestDto;
 
@@ -8,7 +13,6 @@ public interface UserService {
     void createStudent(  CreateStudentRequestDto createStudentRequestDto);
     void deleteUser(String username);
     void updateUser(String username, String newEmail);
-    String getUser(String username);
     boolean userExists(String username);
     void changeUserPassword(String username, String newPassword);
     String getUserEmail(String username);
@@ -31,4 +35,6 @@ public interface UserService {
     void linkUserToExternalIdentity(String username, String externalId);
     void unlinkUserFromExternalIdentity(String username, String externalId);
     void forgotPassword(String username);
+    UserResource getUser(String userId);
+    List<RoleRepresentation> getRolesUser(String userId);
 }

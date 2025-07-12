@@ -3,8 +3,11 @@ package spring.auth.keycloak.authentication_service.service_impl;
 import java.util.List;
 
 import org.keycloak.admin.client.Keycloak;
+import org.keycloak.admin.client.resource.UserResource;
 import org.keycloak.admin.client.resource.UsersResource;
 import org.keycloak.representations.idm.CredentialRepresentation;
+import org.keycloak.representations.idm.GroupRepresentation;
+import org.keycloak.representations.idm.RoleRepresentation;
 import org.keycloak.representations.idm.UserRepresentation;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -75,12 +78,6 @@ public class UserServiceImpl implements UserService {
     @Override
     public void updateUser(String username, String newEmail) {
         // Implementation for updating user email
-    }
-
-    @Override
-    public String getUser(String username) {
-        // Implementation for getting user details
-        return null;
     }
 
     @Override
@@ -211,4 +208,25 @@ public class UserServiceImpl implements UserService {
             
         }
     }
+
+    @Override
+    public UserResource getUser(String userId) {
+        // TODO Auto-generated method stub
+        return getUsersResource().get(userId);
+    }
+
+    @Override
+    public List<RoleRepresentation> getRolesUser(String userId) {
+        return getUser(userId).roles().realmLevel().listAll();
+        // TODO Auto-generated method stub
+//        throw new UnsupportedOperationException("Unimplemented method 'getRolesUser'");
+    }
+
+    public List<GroupRepresentation> getGroupsUser(String userId) {
+        return getUser(userId).groups();
+        // TODO Auto-generated method stub
+//        throw new UnsupportedOperationException("Unimplemented method 'getRolesUser'");
+    }
+
+  
 }
