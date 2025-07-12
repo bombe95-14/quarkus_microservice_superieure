@@ -25,16 +25,16 @@ jobs:
         ports:
           - 5432:5432
         env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-          POSTGRES_DB: scolarite_db
+          POSTGRES_USER: bombe
+          POSTGRES_PASSWORD: bombe
+          POSTGRES_DB: postgres
         options: >-
           --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
         
     env:
-      DB_URL: jdbc:postgresql://localhost:5432/scolarite_db
-      DB_USER: postgres
-      DB_PASSWORD: postgres
+      DB_URL: jdbc:postgresql://localhost:5432/postgres
+      DB_USER: bombe
+      DB_PASSWORD: bombe
 
     steps:
       - name: Checkout code
