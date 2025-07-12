@@ -25,9 +25,6 @@ import java.util.concurrent.ExecutionException;
 @QuarkusTest
 public class EleveRessourceTest {
 
-   @Inject
-    @GraphQLClient("user-client")
-    DynamicGraphQLClient client;
     
   // @Test
   // public void testGlobalListStudent() {
