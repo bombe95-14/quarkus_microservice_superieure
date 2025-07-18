@@ -22,7 +22,7 @@ public enum Sexe {
 
         public static Sexe getSexe(String sexe) {
             if ( Objects.nonNull(sexe) && !sexe.isEmpty() && !sexe.isBlank() ) {
-                if(sexe.equals("Masculin")) {
+                if(sexe.equalsIgnoreCase("Masculin")) {
                     return Sexe.MASCULIN;
                 } else {
                     return Sexe.FEMININ;

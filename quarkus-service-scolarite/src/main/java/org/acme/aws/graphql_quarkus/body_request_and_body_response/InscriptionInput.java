@@ -6,14 +6,9 @@ public class InscriptionInput {
 
     private Long idEleve;
     private Date dateInscription;
-    private Long idClasse;
-    public Long getIdClasse() {
-        return idClasse;
-    }
-    public void setIdClasse(Long idClasse) {
-        this.idClasse = idClasse;
-    }
-    private Long idSchoolYear;
+    private String codeClasse;
+    
+    private String schoolYearCode;
 
     public Date getDateInscription() {
         return dateInscription;
@@ -28,13 +23,20 @@ public class InscriptionInput {
     public void setIdEleve(Long idEleve) {
         this.idEleve = idEleve;
     }
-
-
-    public Long getIdSchoolYear() {
-        return idSchoolYear;
+    public String getCodeClasse() {
+        return codeClasse;
     }
-    public void setIdSchoolYear(Long idSchoolYear) {
-        this.idSchoolYear = idSchoolYear;
+    public void setCodeClasse(String codeClasse) {
+        this.codeClasse = codeClasse;
     }
+    public String getSchoolYearCode() {
+        return schoolYearCode;
+    }
+    public void setSchoolYearCode(String schoolYearCode) {
+        this.schoolYearCode = schoolYearCode;
+    }
+
+    
+    
 
 }

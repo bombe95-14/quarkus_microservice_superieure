@@ -2,20 +2,12 @@ package org.acme.aws.graphql_quarkus.test_unitaire;
 
 
 import io.quarkus.test.junit.QuarkusTest;
-import jakarta.inject.Inject;
-import jakarta.json.JsonObject;
-import jakarta.json.JsonValue;
 
 import org.acme.aws.graphql_quarkus.dto.request.EleveInput;
 import org.junit.jupiter.api.Test;
 import static io.restassured.RestAssured.given;
-import static org.hamcrest.CoreMatchers.is;
-import static org.hamcrest.Matchers.hasSize;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import java.util.Date;
-import java.util.Map;
-import java.util.concurrent.ExecutionException;
 
 
 

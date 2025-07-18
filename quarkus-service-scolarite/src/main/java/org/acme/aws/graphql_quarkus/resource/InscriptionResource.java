@@ -4,7 +4,6 @@ package org.acme.aws.graphql_quarkus.resource;
 import java.util.List;
 
 import org.acme.aws.graphql_quarkus.body_request_and_body_response.InscriptionInput;
-import org.acme.aws.graphql_quarkus.entity.Eleve;
 import org.acme.aws.graphql_quarkus.entity.Inscription;
 import org.acme.aws.graphql_quarkus.traitement.InscriptionTraitement;
 import org.eclipse.microprofile.graphql.GraphQLApi;
@@ -28,6 +27,13 @@ public class InscriptionResource {
     @Mutation
     @Transactional
     public Inscription createRegistrationStudent( InscriptionInput inscriptionInput ) {
+        Inscription inscriptionToSave =  inscriptionTraitement.createRegistrationStudent( inscriptionInput );
+        return inscriptionToSave;
+    }
+
+     @Mutation
+    @Transactional
+    public Inscription generateRegistrationNumberOfStudent( InscriptionInput inscriptionInput ) {
         Inscription inscriptionToSave =  inscriptionTraitement.createRegistrationStudent( inscriptionInput );
         return inscriptionToSave;
     }

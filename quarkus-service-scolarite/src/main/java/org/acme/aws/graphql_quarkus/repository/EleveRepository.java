@@ -49,7 +49,7 @@ public class EleveRepository implements PanacheRepository<Eleve> {
         return findByIdOptional( idEleve );
     }
 
-    public long countCurrentSchoolYear(String chaine) {
+    public long countStudentValidateCurrentSchoolYear(String chaine) {
         return count("#EleveRepository.count", chaine);
     }
  

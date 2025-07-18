@@ -19,11 +19,19 @@ public List<Inscription> findByEleve(Eleve eleve){
        return list("eleve", eleve);
 }
 
-/* public List<Inscription> findByClassRoom( Classroom classroom ){
+//     find("nom = ?1 and prenom = ?2 and LieuNaissance = ?3 and birthday=?4 ", nom, prenom, lieuNaissance, birthday).stream().toList();
 
-    return list( "classroom", classroom );
+public List<Inscription> findByEleveAndSchoolYear(Eleve eleve, String schoolYearCode){
+        
+       return list("eleve = ?1 and schoolYearCode = ?2", eleve, schoolYearCode);
+}
 
-} */
+
+public List<Inscription> findByClassRoomAndSchoolYear( String codeClasse, String schoolYearCode ){
+
+    return find( "schoolYearCode=?1 and codeClasse=?2", schoolYearCode, codeClasse ).list();
+
+} 
 
 
 //public List<Inscription> findByEleveAndSchoolYear(Eleve eleve, SchoolYear schoolYear){

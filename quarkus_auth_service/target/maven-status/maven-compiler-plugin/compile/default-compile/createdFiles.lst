@@ -1,0 +1,10 @@
+authentication/service/controller/UserController.class
+authentication/service/controller/GroupController.class
+authentication/service/service/RoleService.class
+authentication/service/dto/request/AuthenticationRequestDto.class
+authentication/service/service/GroupService.class
+authentication/service/service/UserService.class
+authentication/service/controller/RoleController.class
+authentication/service/dto/request/CreateStudentRequest.class
+authentication/service/controller/AuthenticationController.class
+authentication/service/RolesResource.class

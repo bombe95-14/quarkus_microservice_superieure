@@ -44,13 +44,18 @@ public class InscriptionTraitement {
         // }
 
         inscription.eleve = eleveOptional.get();
-     //   inscription.classe = classeOptional.get();
-     //   inscription.schoolYear = schoolYearOptional.get();
-        inscription.dateInscription = inscriptionInput.getDateInscription();
+        inscription.codeClasse = inscriptionInput.getCodeClasse();
+        inscription.schoolYearCode = inscriptionInput.getSchoolYearCode();
+     
+        //inscription.dateInscription = inscriptionInput.getDateInscription();
       
 
         inscriptionRepository.persist(inscription);
         return inscription;
+    }
+
+    public Eleve generateRegistrationNumberOfStudent( Long studentId ){
+
     }
 
 }
