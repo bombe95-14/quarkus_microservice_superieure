@@ -13,6 +13,16 @@ on:
       - main
 
 jobs:
+
+  taff_service:
+    runs_on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: ./un
+
+    services:
+      
+  
   scolarite_service:
     runs-on: ubuntu-latest
     defaults:
