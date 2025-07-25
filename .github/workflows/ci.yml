@@ -1,9 +1,7 @@
 
 name: MICROSERVICES_SUPERIEURS_CI
 
-# ssh username@ip_adress
-# sudo su
-# ssh-keygen -t rsa -b 4096 -C "adress_email"
+
 on:
   push:
     branches:
@@ -13,7 +11,6 @@ on:
       - main
 
 jobs:
-
   taff_service:
     runs-on: ubuntu-latest
     defaults:
@@ -31,6 +28,25 @@ jobs:
           POSTGRES_DB: postgres
         options: >-
           --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+
+    env:
+      DB_URL: jdbc:postgresql://localhost:5432/postgres
+      DB_USER: bombe
+      DB_PASSWORD: bombe
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: set up JDK 17
+        uses: actions/setup-java@v3
+        with:
+          java-version: 17
+          distribution: temurin
+          cache: maven
+      - name: Test
+        run: mvn test
+      - name: Build
+        run: mvn package
       
   
   scolarite_service:
