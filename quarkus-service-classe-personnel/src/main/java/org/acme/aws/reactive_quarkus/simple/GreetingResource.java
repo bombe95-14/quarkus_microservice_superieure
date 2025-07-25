@@ -10,12 +10,12 @@ import jakarta.ws.rs.core.MediaType;
 @Path("/hello")
 public class GreetingResource {
 
-   @ConfigProperty(name = "greeting.message", defaultValue="Hello from default")
-    String message;
+//    @ConfigProperty(name = "greeting.message", defaultValue="Hello from default")
+//     String message;
     @GET
     @Produces(MediaType.TEXT_PLAIN)
     public String hello() {
-        return message;
+        return "message";
     }
     
 }

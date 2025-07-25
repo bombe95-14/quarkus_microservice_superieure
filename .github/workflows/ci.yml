@@ -15,12 +15,22 @@ on:
 jobs:
 
   taff_service:
-    runs_on: ubuntu-latest
+    runs-on: ubuntu-latest
     defaults:
       run:
-        working-directory: ./un
+        working-directory: ./quarkus-service-classe-personnel
 
     services:
+      postgresql:
+        image: postgres:14
+        ports:
+          - 5432:5432
+        env:
+          POSTGRES_USER: bombe
+          POSTGRES_PASSWORD: bombe
+          POSTGRES_DB: postgres
+        options: >-
+          --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
       
   
   scolarite_service:

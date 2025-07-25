@@ -55,7 +55,7 @@ public class InscriptionTraitement {
     }
 
     public Eleve generateRegistrationNumberOfStudent( Long studentId ){
-
+        return null;
     }
 
 }
