@@ -43,7 +43,6 @@ public class RolesResource {
         @Path("/roles")
         public List<RoleRepresentation> getRoles() {
 //            () -> keycloak.realm("null").users()
-            keycloak.realm("null").
             return keycloak.realm("springbootkeycloak").roles().list();
         }
 
