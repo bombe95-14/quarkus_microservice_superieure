@@ -74,3 +74,17 @@ Create your first JPA entity
 Easily start your Reactive RESTful Web Services
 
 [Related guide section...](https://quarkus.io/guides/getting-started-reactive#reactive-jax-rs-resources)
+
+
+
+le seul cloud qui execute des bd autonomes et de multiples variantes, y compris OLAP, JSON, OLTP.
+exadata
+
+Gouvernance et administration : securité, identité, gestion et observabilité
+Les compartiments facilitent la gestion operationnelles des env volumineux complexes
+
+plateforme integrée d'observabilité et de gestion avec des fonctionnalités tels que la journalisation , l'analyse de journalisation 
+Apex est un service low-code geré
+service terraform géré dit resource manager
+service d'analyse géré tels que Oracle analytics cloud qui s'intègre à diverses solutions tierces 
+serverless :  api gateway , functions 
