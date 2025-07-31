@@ -19,7 +19,7 @@ public class Eleve  { //
     public Long id;
 
     public String nom;
-    @Column( unique = true )
+    @Column( unique = true, nullable = true )
     public String matricule;
 
     @Column( unique = true )

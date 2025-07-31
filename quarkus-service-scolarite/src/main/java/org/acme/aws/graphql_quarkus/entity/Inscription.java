@@ -19,10 +19,11 @@ public class Inscription{  // extends PanacheEntityBase
     @JsonIgnore
     public Eleve eleve;
 
-    public String schoolYearYearCode;
+    public String schoolYearCode;
 
     public String codeClasse;
 
+    @Column( nullable = true )
     public Date dateInscription;
     public Semestre semestre;
 

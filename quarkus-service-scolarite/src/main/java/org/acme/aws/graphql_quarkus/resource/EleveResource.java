@@ -12,10 +12,38 @@ import org.eclipse.microprofile.graphql.GraphQLApi;
 import org.eclipse.microprofile.graphql.Mutation;
 import org.eclipse.microprofile.graphql.Query;
 
+import io.smallrye.graphql.api.Subscription;
+import io.smallrye.mutiny.Multi;
+import io.smallrye.mutiny.operators.multi.processors.BroadcastProcessor;
+
 import java.util.List;
 
 @GraphQLApi
 public class EleveResource {
+
+    BroadcastProcessor<Eleve> processor = BroadcastProcessor.create(); 
+
+//         @Mutation
+//     public Hero createHero(Hero hero) {
+//         service.addHero(hero);
+//         processor.onNext(hero); 
+//         return hero;
+//     }
+
+//     @Subscription
+//     public Multi<Hero> heroCreated(){
+//         return processor; 
+//     }
+
+//     subscription ListenForNewHeroes {
+//   heroCreated {
+//     name
+//     surname
+//   }
+// }
+//      public Film getFilm(Context context, int filmId) {
+
+
 
     @Inject
     EleveTraitement eleveTraitement;

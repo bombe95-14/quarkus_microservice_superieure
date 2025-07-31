@@ -1,0 +1,26 @@
+spring:
+  application:
+    name: authentication_service
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: ${{app.keycloak.auth-server-url}}/realms/${{app.keycloak.realm}}
+
+server:
+  servlet:
+    context-path: /auth
+
+  port: 8090
+
+
+app:
+  keycloak:
+    admin:
+      clientId: admin-cli
+      clientSecret: 1c2d3e4f5g6h7i8j9k0l
+       
+    auth-server-url: http://localhost:8090/realms/quarkus
+    realm: quarkus
+    resource: authentication_service

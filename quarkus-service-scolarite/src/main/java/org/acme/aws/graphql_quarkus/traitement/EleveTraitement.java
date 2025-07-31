@@ -15,6 +15,7 @@ import java.util.Optional;
 import org.acme.aws.graphql_quarkus.dto.request.EleveInput;
 import org.acme.aws.graphql_quarkus.entity.Eleve;
 import org.acme.aws.graphql_quarkus.enumeration.Sexe;
+import org.acme.aws.graphql_quarkus.enumeration.StatusEleve;
 import org.acme.aws.graphql_quarkus.repository.EleveRepository;
 import org.acme.aws.graphql_quarkus.repository.InscriptionRepository;
 
@@ -62,13 +63,19 @@ InscriptionRepository inscriptionRepository;
         eleve.dateDelivrance = eleveInput.dateDelivrance;
         eleve.LieuNaissance = eleveInput.LieuNaissance;
         eleve.password = eleveInput.password;
+        eleve.statusEleve = StatusEleve.PRE_INSCRIPTION;
             
 
         eleveRepository.persist(eleve);
         return eleve;
     }
 
-    public String generatedMatricule(){
+    public String generatedMatricule( Long studentId ){
+        Eleve eleve = eleveRepository.findByEleveId(studentId)
+                                           .orElseThrow( ()-> new BadRequestException("Champ obligatoire vide" ) );     
+
+        long number = eleveRepository.countStudentValidateCurrentSchoolYear("null");
+        eleve.statusEleve = StatusEleve.INSCRIPTION;
         return "";
     }
 
