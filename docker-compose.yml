@@ -43,12 +43,10 @@ services:
   #     - scolarite_postgres
 
   quarkus-service-scolarite:
-    # build: 
-    #   context: ./quarkus-service-scolarite/src/main/docker
-    #   dockerfile: Dockerfile.jvm
+    build: 
+      context: ./quarkus-service-scolarite
+      dockerfile: src/main/docker/Dockerfile.jvm
     restart: always
-    image: quarkus/quarkus-scolarite:latest
-    container_name: quarkus-service-scolarite
     ports:
       - "8099:8099"
     environment:
@@ -63,12 +61,9 @@ services:
       - gateway
 
   quarkus-service-classe-personnel:
-    # build: 
-    #   context: ./quarkus-service-classe-personnel/src/main/docker
-    #   dockerfile: Dockerfile.jvm
-
-    image: quarkus/quarkus-staff:latest
-    container_name: quarkus-service-classe-personnel
+    build: 
+      context: ./quarkus-service-classe-personnel
+      dockerfile: src/main/docker/Dockerfile.jvm
     ports:
       - "8092:8092"
     environment:
@@ -98,7 +93,7 @@ services:
     image: nginx:latest
     container_name: nginx
     ports:
-      - "80:80"
+      - "8080:80"
     volumes:
       - ./nginx/config.conf:/etc/nginx/conf.d
     depends_on:
