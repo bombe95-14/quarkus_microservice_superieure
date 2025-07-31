@@ -11,10 +11,22 @@ services:
       - "5432:5432"
     volumes:
       - ./db_data:/var/lib/postgresql/data
-
-  # notes_postgres:
     networks:
       - gateway
+
+  notes_mongodb:
+    image: mongo:4.4
+    container_name: notes-mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    networks:
+      - gateway
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./notes_data:/data/db
 
   # authentication:
   #   image: quarkus-service-authentication-graph:latest
@@ -31,11 +43,11 @@ services:
 
   quarkus-service-scolarite:
     build: 
-      context: ./quarkus-service-scolarite/src/main/docker/
-      dockerfile: Dockerfile.jvm
+      context: ./quarkus-service-scolarite
+      dockerfile: src/main/docker/Dockerfile.jvm
     restart: always
-    image: quarkus/quarkus-scolarite:latest
     container_name: quarkus-service-scolarite
+    command: mvn clean package
     ports:
       - "8099:8099"
     environment: 
@@ -51,11 +63,8 @@ services:
 
   quarkus-service-classe-personnel:
     build: 
-      context: ./quarkus-service-classe-personnel/src/main/docker/
-      dockerfile: Dockerfile.jvm
-
-    image: quarkus/quarkus-staff:latest
-    container_name: quarkus-service-classe-personnel
+      context: ./quarkus-service-classe-personnel
+      dockerfile: src/main/docker/Dockerfile.jvm
     ports:
       - "8092:8092"
     environment:
@@ -68,25 +77,25 @@ services:
     networks:
       - gateway
   
-  # notes:
-  #   image: quarkus-service-notes-graph:latest
-  #   container_name: quarkus-service-notes-graph
-  #   ports:
-  #     - "8081:8080"
-  #   environment:
-  #     - QUARKUS_PROFILE=dev
-  #     - QUARKUS_DATASOURCE_JDBC_URL=jdbc:postgresql://db:5432/notes
-  #     - QUARKUS_DATASOURCE_USERNAME=postgres
-  #     - QUARKUS_DATASOURCE_PASSWORD=postgres
-  #   depends_on:
-  #     - notes_mongodb
+  quarkus-service-notes:
+    build:
+      context: ./quarkus-service-note
+      dockerfile: src/main/docker/Dockerfile.jvm
+    ports:
+       - "8093:8093"
+    environment:
+      - QUARKUS_PROFILE=dev
+      - QUARKUS_DATASOURCE_JDBC_URL=jdbc:postgresql://db:5432/notes
+      - QUARKUS_DATASOURCE_USERNAME=postgres
+      - QUARKUS_DATASOURCE_PASSWORD=postgres
+    depends_on:
+       - notes_mongodb
 
   nginx:
     image: nginx:latest
     container_name: nginx_proxy
     ports:
-      - "80:80"
-      - "443:443"
+      - "8080:80"
     volumes:
       - ./nginx/config.conf:/etc/nginx/conf.d/config.conf
     links:
