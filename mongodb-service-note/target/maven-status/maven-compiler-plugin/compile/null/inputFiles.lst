@@ -1,0 +1,11 @@
+/home/kenfack-cedric/Documents/quarkus project/mongodb-panache-quickstart/src/main/java/org/acme/mongodb/panache/entity/Note.java
+/home/kenfack-cedric/Documents/quarkus project/mongodb-panache-quickstart/src/main/java/org/acme/mongodb/panache/repository/NoteRepository.java
+/home/kenfack-cedric/Documents/quarkus project/mongodb-panache-quickstart/src/main/java/org/acme/mongodb/panache/ressource/NoteRessource.java
+/home/kenfack-cedric/Documents/quarkus project/mongodb-panache-quickstart/src/main/java/org/acme/mongodb/panache/repository/RequeteNoteEleveRepository.java
+/home/kenfack-cedric/Documents/quarkus project/mongodb-panache-quickstart/src/main/java/org/acme/mongodb/panache/dto/NoteInput.java
+/home/kenfack-cedric/Documents/quarkus project/mongodb-panache-quickstart/src/main/java/org/acme/mongodb/panache/entity/Status.java
+/home/kenfack-cedric/Documents/quarkus project/mongodb-panache-quickstart/src/main/java/org/acme/mongodb/panache/traitement/NoteEleveTraitement.java
+/home/kenfack-cedric/Documents/quarkus project/mongodb-panache-quickstart/src/main/java/org/acme/mongodb/panache/entity/RequeteNoteEleve.java
+/home/kenfack-cedric/Documents/quarkus project/mongodb-panache-quickstart/src/main/java/org/acme/mongodb/panache/ressource/RequeteNoteStudentRessource.java
+/home/kenfack-cedric/Documents/quarkus project/mongodb-panache-quickstart/src/main/java/org/acme/mongodb/panache/traitement/RequestEleveNoteTritement.java
+/home/kenfack-cedric/Documents/quarkus project/mongodb-panache-quickstart/src/main/java/org/acme/mongodb/panache/enumeration/TypeNote.java

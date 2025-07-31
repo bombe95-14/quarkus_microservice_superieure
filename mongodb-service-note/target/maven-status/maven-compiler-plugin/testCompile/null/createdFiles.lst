@@ -1,0 +1,3 @@
+META-INF/panache-archive.marker
+org/acme/mongodb/panache/MongoDbResource.class
+org/acme/mongodb/panache/PersonResourceIT.class
