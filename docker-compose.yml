@@ -11,10 +11,22 @@ services:
       - "5432:5432"
     volumes:
       - ./db_data:/var/lib/postgresql/data
-
-  # notes_postgres:
     networks:
       - gateway
+
+  notes_mongodb:
+    image: mongo:4.4
+    container_name: notes-mongodb
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: example
+    networks:
+      - gateway
+    ports:
+      - "27017:27017"
+    volumes:
+      - ./notes_data:/data/db
 
   # authentication:
   #   image: quarkus-service-authentication-graph:latest
@@ -34,6 +46,8 @@ services:
       context: ./quarkus-service-scolarite
       dockerfile: src/main/docker/Dockerfile.jvm
     restart: always
+    container_name: quarkus-service-scolarite
+    command: mvn clean package
     ports:
       - "8099:8099"
     environment: 
@@ -63,7 +77,7 @@ services:
     networks:
       - gateway
   
-  notes:
+  quarkus-service-notes:
     build:
       context: ./quarkus-service-note
       dockerfile: src/main/docker/Dockerfile.jvm
