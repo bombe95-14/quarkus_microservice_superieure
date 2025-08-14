@@ -39,6 +39,6 @@ public class Course {
 
     @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
-    private Set<AssignmentTeachersClassroom> assignmentTeachersClassrooms = new java.util.HashSet<>();
+    private Set<AssignmentTeachersInClassroom> assignmentTeachersClassrooms = new java.util.HashSet<>();
 
 }

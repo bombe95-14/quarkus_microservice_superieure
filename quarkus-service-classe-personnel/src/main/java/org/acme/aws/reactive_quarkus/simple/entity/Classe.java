@@ -29,7 +29,7 @@ public class Classe {
 
     @OneToMany(mappedBy = "classe", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonIgnore
-    private Set<AssignmentTeachersClassroom> assignmentTeachersClassrooms = new java.util.HashSet<>();
+    private Set<AssignmentTeachersInClassroom> assignmentTeachersClassrooms = new java.util.HashSet<>();
 
 
     public String getCodeClasse() {

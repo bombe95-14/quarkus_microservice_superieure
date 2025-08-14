@@ -48,10 +48,6 @@ public class Personnel extends PanacheEntityBase {
     @OneToMany(mappedBy = "personnel", cascade = CascadeType.ALL, orphanRemoval = true)
     private Set<Fonction> fonctions = new java.util.HashSet<>();
 
-    @OneToMany(mappedBy = "personnel", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore
-    private Set<AssignmentTeachersClassroom> assignmentTeachersClassrooms = new java.util.HashSet<>();
-
     public Personnel() {   } 
     // Constructors, getters, and setters can be added as needed
 
@@ -151,12 +147,5 @@ public class Personnel extends PanacheEntityBase {
         this.fonctions = fonctions;
     }
 
-    public Set<AssignmentTeachersClassroom> getAssignmentTeachersClassrooms() {
-        return assignmentTeachersClassrooms;
-    }
-
-    public void setAssignmentTeachersClassrooms(Set<AssignmentTeachersClassroom> assignmentTeachersClassrooms) {
-        this.assignmentTeachersClassrooms = assignmentTeachersClassrooms;
-    }
     
 }

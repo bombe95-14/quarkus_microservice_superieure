@@ -32,7 +32,4 @@ public class ProgrammingCourseInClassRoom {
     @JoinColumn(name = "class_room_uuid")
     private ClassRoom classRoom;
 
-    @OneToMany(mappedBy = "programmingCourseInClassRoom",  cascade = CascadeType.ALL, orphanRemoval = true )
-    private Set<AssignmentTeachersClassroom> assignmentTeachersClassrooms = new java.util.HashSet<>();
-
 }
