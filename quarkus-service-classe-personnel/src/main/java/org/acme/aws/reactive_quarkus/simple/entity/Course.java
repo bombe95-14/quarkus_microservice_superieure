@@ -32,13 +32,9 @@ public class Course {
     private String courseCode;
     private String description;
 
-    @Enumerated(
-        value = jakarta.persistence.EnumType.STRING
-    )
-    private Semestre semester;
+    @ManyToOne
+    @JoinColumn(name = "id" , nullable = true )
+    private Classe classe;
 
-    @OneToMany(mappedBy = "course", cascade = CascadeType.ALL, orphanRemoval = true)
-    @JsonIgnore
-    private Set<AssignmentTeachersInClassroom> assignmentTeachersClassrooms = new java.util.HashSet<>();
-
+   
 }

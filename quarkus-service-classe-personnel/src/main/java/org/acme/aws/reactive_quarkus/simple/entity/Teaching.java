@@ -32,7 +32,7 @@ public class Teaching {
     private Course course;
 
     @ManyToOne
-    @JoinColumn(name = "id" , nullable = true )
+    @JoinColumn(name = "school_year_id" , nullable = true )
     private SchoolYear schoolYear;
 
     @ManyToOne

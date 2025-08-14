@@ -10,6 +10,7 @@ public class SchoolYear { // extends PanacheEntityBase
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column( name = "school_year_id" )
     public Integer id;
     
     public Integer getId() {
