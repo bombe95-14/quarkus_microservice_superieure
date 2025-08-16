@@ -23,7 +23,12 @@ public class PriseService {
     private UUID priseServiceUuid;
 
     @OneToOne
+    @JoinColumn(name = "personnel_id", nullable = false)
     private Personnel personnel;
+
+    @OneToOne
+     @JoinColumn( name="fonctionId" )  
+    private Fonction fonction;
 
     @ManyToOne
     @JoinColumn(name = "school_year_id" , nullable = true )

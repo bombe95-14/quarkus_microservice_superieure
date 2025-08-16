@@ -22,7 +22,7 @@ public class ClasseResource {
         return personnel;
     }
 
-    @Path("/classe/{classroomId}")
+    @Path("/{classroomId}")
     @POST
     public Long removeClass(Long classroomId) {
     

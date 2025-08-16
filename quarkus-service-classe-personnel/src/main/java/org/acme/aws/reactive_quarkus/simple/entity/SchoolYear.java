@@ -12,7 +12,14 @@ public class SchoolYear { // extends PanacheEntityBase
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column( name = "school_year_id" )
     public Integer id;
-    
+
+    @Column( unique = true )
+    public String codeAnneScolaire;
+    public Date dateCreation;
+    public Date dateCloture;
+    public Boolean activated;
+
+
     public Integer getId() {
         return id;
     }
@@ -23,7 +30,6 @@ public class SchoolYear { // extends PanacheEntityBase
     }
 
 
-    public String codeAnneScolaire;
     public String getCodeAnneScolaire() {
         return codeAnneScolaire;
     }
@@ -34,7 +40,6 @@ public class SchoolYear { // extends PanacheEntityBase
     }
 
 
-    public Date dateCreation;
     public Date getDateCreation() {
         return dateCreation;
     }
@@ -43,10 +48,6 @@ public class SchoolYear { // extends PanacheEntityBase
     public void setDateCreation(Date dateCreation) {
         this.dateCreation = dateCreation;
     }
-
-
-    public Date dateCloture;
-
 
     public Date getDateCloture() {
         return dateCloture;
